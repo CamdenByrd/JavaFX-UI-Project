@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Button?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="mainfxml" fx:controller="com.example.hw1.HelloController">
+    <padding>
+        <Insets top="10" left="10" right="10" bottom="10"/>
+    </padding>
+    <left>
+        <VBox spacing="17">
+            <Label text="Name">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Street">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="City">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="State">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Zip">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Choose One">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Type of Music">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Type of App">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Enter Title">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Date Purchased">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+            <Label text="Account Number">
+                <font>
+                    <Font name="bold" size="13"/>
+                </font>
+            </Label>
+        </VBox>
+    </left>
+    <right>
+       <VBox spacing="10">
+           <TextField prefWidth="220" fx:id="nameField">
+           </TextField>
+           <TextField prefWidth="220" fx:id="streetField">
+           </TextField>
+           <TextField prefWidth="220" fx:id="cityField">
+           </TextField>
+           <TextField prefWidth="220" fx:id="stateField">
+           </TextField>
+           <TextField prefWidth="220" fx:id="zipField">
+           </TextField>
+           <HBox spacing="75">
+               <CheckBox text="APP" fx:id="appCheckbox" onAction="#musicBoxGreying"/>
+               <CheckBox text="MUSIC" fx:id="musicCheckbox" onAction="#appSelectionGreying"/>
+           </HBox>
+           <VBox spacing="15"/>
+           <ComboBox prefWidth="300" fx:id="musicComboBox">
+               <items>
+                   <FXCollections fx:factory="observableArrayList">
+                       <String fx:value="Pop"/>
+                       <String fx:value="Rock"/>
+                       <String fx:value="Classical"/>
+                       <String fx:value="Jazz"/>
+                       <String fx:value="Rap"/>
+                   </FXCollections>
+               </items>
+               <value>
+                   <String fx:value="CHOOSE ONE"/>
+               </value>
+           </ComboBox>
+           <VBox spacing="15"/>
+           <HBox spacing="15" fx:id="appRadios">
+               <fx:define>
+                   <ToggleGroup fx:id="appToggleGroup"/>
+               </fx:define>
+               <RadioButton text="GAME" toggleGroup="$appToggleGroup"/>
+               <RadioButton text="PRODUCTIVITY" toggleGroup="$appToggleGroup"/>
+               <RadioButton text="EDUCATION" toggleGroup="$appToggleGroup"/>
+           </HBox>
+           <TextField prefWidth="220" fx:id="titleField">
+           </TextField>
+           <TextField prefWidth="220" fx:id="dateField">
+           </TextField>
+           <TextField prefWidth="220" fx:id="accountField">
+           </TextField>
+       </VBox>
+    </right>
+    <bottom>
+        <HBox spacing="10">
+            <Button text="SUBMIT" prefWidth="440" style="-fx-background-radius: 16" fx:id="submitButton" onAction="#submitValidation">
+            </Button>
+            <Button text="FINISH" prefWidth="440" style="-fx-background-radius: 16" fx:id="finishButton" onAction="#finishFunctionality">
+            </Button>
+        </HBox>
+    </bottom>
+</BorderPane>
