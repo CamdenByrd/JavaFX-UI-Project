@@ -1,4 +1,3 @@
-//Camden Byrd 1001829015
 package com.example.hw1;
 
 import javafx.application.Platform;
